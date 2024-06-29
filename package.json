@@ -18,5 +18,8 @@
   "homepage": "https://github.com/NicolaeZOLTAN/Front-End-Fisheye#readme",
   "dependencies": {
     "chalk": "^5.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.6.0"
   }
 }
