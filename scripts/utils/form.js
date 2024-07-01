@@ -5,9 +5,17 @@ export const openCloseFormContact = () => {
     contactBtn.addEventListener("click", () => {
         contactModal.style.display = "flex";
         closeModal.focus();
+        
     });
     closeModal.addEventListener("click", () => contactModal.style.display = "none");
+     document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && contactModal.style.display === 'flex') {
+            contactModal.style.display = 'none';
+            contactBtn.focus(); // Return focus to the contact button
+        }
+    });
 };
+
 
 export const validateForm = () => {
     const form = document.querySelector('.modal_form form');
@@ -55,7 +63,7 @@ export const validateForm = () => {
 
     const displayCustomMessage = () => {
         const regexName = /^([A-Za-z|\s]{3,15})?([-]{0,1})?([A-Za-z|\s]{3,15})$/;
-        const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        const regexEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
         const regexMessage = /^[A-Za-z0-9|\s]{20,200}$/;
 
         checkInputValidity(firstName, regexName);
@@ -64,3 +72,4 @@ export const validateForm = () => {
         checkInputValidity(message, regexMessage);
     };
 };
+

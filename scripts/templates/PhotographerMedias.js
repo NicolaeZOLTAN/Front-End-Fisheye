@@ -5,6 +5,7 @@ export default class PhotographerMedias {
     };
 
     createPhotographerMedias() {
+        
         const profilePageContent = document.querySelector(".main_content_medias");
         const content = `
             <section class="gallery">
@@ -44,4 +45,6 @@ export default class PhotographerMedias {
         profilePageContent.innerHTML = content;
         return content;
     };
+
 };
+
